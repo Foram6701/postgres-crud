@@ -3,3 +3,7 @@
 .Spotlight-*
 .Trashes
 .env
+.venv/
+.env
+.DS_Store
+._*

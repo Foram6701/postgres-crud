@@ -1,5 +1,3 @@
-# app/db_access.py
-
 from __future__ import annotations
 import os
 from typing import Optional, List
@@ -9,7 +7,6 @@ from psycopg import errors
 from psycopg.rows import dict_row
 from dotenv import load_dotenv, find_dotenv
 
-# Load .env reliably
 load_dotenv(find_dotenv(), override=True)
 
 def connect() -> Optional[psycopg.Connection]:
@@ -25,11 +22,10 @@ def connect() -> Optional[psycopg.Connection]:
             row_factory=dict_row,
         )
     except Exception as e:
-        print(f"❌ Error connecting to the database ({host}:{port} as {user}): {e}")
+        print(f"Error connecting to the database ({host}:{port} as {user}): {e}")
         return None
 
-# --------- CRUD ---------
-
+# CRUD 
 def get_all_students() -> Optional[List[dict]]:
     """Return all students ordered by id (or None if connection failed)."""
     conn = connect()
@@ -65,7 +61,7 @@ def add_student(first_name: str, last_name: str, email: str, enrollment_date: st
                     """, (first_name, last_name, email, enrollment_date))
                     return cur.fetchone()["student_id"]
                 except errors.UniqueViolation:
-                    print(f"⚠️ Duplicate email: {email} (UNIQUE violation).")
+                    print(f"Duplicate email: {email} (UNIQUE violation).")
                     return None
     finally:
         conn.close()
@@ -106,7 +102,7 @@ def delete_student(student_id: int) -> bool:
     finally:
         conn.close()
 
-# --------- Pretty print helper ---------
+# print helper
 
 def print_students(rows: Optional[List[dict]]) -> None:
     """Neatly print student rows."""
