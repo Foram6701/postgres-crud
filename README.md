@@ -33,7 +33,7 @@ source .venv/bin/activate   # macOS/Linux
 OR
 .venv\Scripts\activate      # Windows
 
-3. Install dependencies
+3. Install dependencies:
 pip install -r requirements.txt
 
 4. Environment Variables:
@@ -87,3 +87,4 @@ Install them manually if needed with this command:
 pip install "psycopg[binary]" python-dotenv
 
 Demo Video:
+https://youtu.be/DFomGYDqIXI
