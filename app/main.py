@@ -27,7 +27,7 @@ def demo_sequence():
     printStudents(getAllStudents())
 
     # 3) UPDATE — update email for a specific student_id.
-    updated = updateStudentEmail(11, "alice.updated@example.com")
+    updated = updateStudentEmail(16, "alice.updated@example.com")
     print(f"Updated={updated}")
 
     print("\n=== AFTER UPDATE ===")
@@ -35,7 +35,7 @@ def demo_sequence():
 
     # 4) DELETE — delete by id and show rows afterward.
     print("\n=== DELETE ===")
-    deleted = deleteStudent(11)
+    deleted = deleteStudent(16)
     print(f"Deleted={deleted}")
 
     print("\n=== AFTER DELETE ===")
