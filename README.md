@@ -23,7 +23,7 @@ Setup Instructions:
 
 1. Clone the repository:
 Commands:
-git clone https://github.com/<your-username>/postgres-crud.git
+git clone https://github.com/Foram6701/postgres-crud.git
 cd postgres-crud
 
 2. Create and activate a virtual environment:
